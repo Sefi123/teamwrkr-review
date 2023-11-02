@@ -1,4 +1,4 @@
-export const baseURL = "https://app.teamwrkr.com/tw2";
+export const baseURL = "https://app.teamwrkr.com/tw2-backend";
 
 //Countries
 export const countries = [
