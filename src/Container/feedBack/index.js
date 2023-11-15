@@ -22,6 +22,7 @@ const FeedBack = () => {
   const [hardSkills, setHardSkills] = useState([]);
   const [softSkills, setSoftSkills] = useState([]);
   const [surveyDate, setSurveyDate] = useState("");
+  const [surveyTitle, setSurveyTitle] = useState("");
   const [description, setDescription] = useState("");
   const [starError, setStarError] = useState(false);
   const [exception, setException] = useState("");
@@ -48,6 +49,7 @@ const FeedBack = () => {
           response?.softSkill?.map((skill) => ({ label: skill, value: 0 }))
         );
         setName(response?.userFistName + " " + response?.userLastName);
+        setSurveyTitle(response?.serveyTitle);
         setLoader(false);
       }
     } catch (e) {
@@ -59,7 +61,7 @@ const FeedBack = () => {
 
   const feedBackContent = [
     {
-      title: `Tell us about your experience working with ${name} as Test Case that started on or about `,
+      title: `Tell us about your experience working with ${name} as ${surveyTitle} that started on or about `,
       ratingArr: [
         {
           ratingTitle: "Overall Experience:",
